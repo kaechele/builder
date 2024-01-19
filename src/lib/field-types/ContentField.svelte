@@ -1,23 +1,23 @@
 <script>
-  import { createEventDispatcher } from 'svelte'
+  import { createEventDispatcher } from 'svelte';
 
-  const dispatch = createEventDispatcher()
+  const dispatch = createEventDispatcher();
 
-  export let field
-  export let onChange = () => {}
+  export let field;
+  export let onChange = () => {};
 
-  export let value = null
-  export let disabled = false
-  export let title = null
-  export let variants = ''
+  export let value = null;
+  export let disabled = false;
+  export let title = null;
+  export let variants = '';
 
   function selectAll({ target }) {
-    if (field.default === field.value) target.select()
+    if (field.default === field.value) target.select();
   }
 
   function handleSave({ metaKey, key }) {
     if (metaKey && key === 's') {
-      dispatch('save')
+      dispatch('save');
     }
   }
 </script>
@@ -39,8 +39,8 @@
       type="text"
       bind:value
       on:input={() => {
-        onChange(field)
-        dispatch('input', field)
+        onChange(field);
+        dispatch('input', field);
       }}
     />
   </label>

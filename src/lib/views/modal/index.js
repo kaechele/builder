@@ -1,17 +1,17 @@
-import Deploy from './Deploy.svelte'
-import ComponentEditor from './ComponentEditor/ComponentEditor.svelte'
-import SymbolEditor from './SymbolEditor/SymbolEditor.svelte'
-import PageEditor from './PageEditor/PageEditor.svelte'
-import SiteEditor from './SiteEditor/SiteEditor.svelte'
-import SitePages from './SitePages/SitePages.svelte'
-import Dialog from './Dialog.svelte'
+import ComponentEditor from './ComponentEditor/ComponentEditor.svelte';
+import Deploy from './Deploy.svelte';
+import Dialog from './Dialog.svelte';
+import PageEditor from './PageEditor/PageEditor.svelte';
+import SiteEditor from './SiteEditor/SiteEditor.svelte';
+import SitePages from './SitePages/SitePages.svelte';
+import SymbolEditor from './SymbolEditor/SymbolEditor.svelte';
 
 export {
-  Deploy,
   ComponentEditor,
-  SymbolEditor,
+  Deploy,
+  Dialog,
   PageEditor,
   SiteEditor,
   SitePages,
-  Dialog
-}
+  SymbolEditor,
+};

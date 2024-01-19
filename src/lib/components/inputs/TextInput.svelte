@@ -1,22 +1,22 @@
 <script>
-  import { createEventDispatcher } from 'svelte'
-  const dispatch = createEventDispatcher()
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
 
   /** @type {string | null} */
-  export let id = null
+  export let id = null;
 
   /** @type {string | null} */
-  export let label = null
+  export let label = null;
 
   /** @type {string} */
-  export let prefix = ''
+  export let prefix = '';
 
   /** @type {string} */
-  export let value
-  export let placeholder = ''
-  export let variants = ''
-  export let type = 'text'
-  export let autofocus = false
+  export let value;
+  export let placeholder = '';
+  export let variants = '';
+  export let type = 'text';
+  export let autofocus = false;
 
   // Note: Svelte seems to have some issues with two-way binding, so if this is acting up it's probably that
 </script>
@@ -32,8 +32,8 @@
       {placeholder}
       {autofocus}
       on:input={({ target }) => {
-        value = target.value
-        dispatch('input', value)
+        value = target.value;
+        dispatch('input', value);
       }}
     />
   </div>

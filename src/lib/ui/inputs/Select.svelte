@@ -1,19 +1,19 @@
 <script>
   /** @type {string | null} */
-  export let label = null
-  export let value
-  export let options
-  export let disabled = false
-  export let variants = ''
-  export let info = null
-  export let size = 'medium'
+  export let label = null;
+  export let value;
+  export let options;
+  export let disabled = false;
+  export let variants = '';
+  export let info = null;
+  export let size = 'medium';
 </script>
 
 <label class="{variants} {size}">
   {#if label}
     <span title={info}>
       {label}
-      {#if info}<i class="fas fa-info-circle " />{/if}
+      {#if info}<i class="fas fa-info-circle" />{/if}
     </span>
   {/if}
 

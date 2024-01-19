@@ -1,12 +1,12 @@
 <script>
-	import PrimoPage from '$lib/views/editor/Page.svelte'
+  import PrimoPage from '$lib/views/editor/Page.svelte';
 
-	export let data
+  export let data;
 </script>
 
 <PrimoPage
-	page={{
-		...data.page,
-		sections: data.sections
-	}}
+  page={{
+    ...data.page,
+    sections: data.sections,
+  }}
 />

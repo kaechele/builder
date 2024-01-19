@@ -1,35 +1,35 @@
 <script>
-  import { createEventDispatcher } from 'svelte'
-  import { v4 as uuidv4 } from 'uuid'
-  import { fade } from 'svelte/transition'
-  import { TextInput } from '$lib/components/inputs'
-  import Select from '$lib/ui/inputs/Select.svelte'
-  import pages from '$lib/stores/data/pages'
-  import Icon from '@iconify/svelte'
-  import { validate_url } from '$lib/utilities'
-  import { id as active_page_id } from '$lib/stores/app/activePage'
+  import { TextInput } from '$lib/components/inputs';
+  import { id as active_page_id } from '$lib/stores/app/activePage';
+  import pages from '$lib/stores/data/pages';
+  import Select from '$lib/ui/inputs/Select.svelte';
+  import { validate_url } from '$lib/utilities';
+  import Icon from '@iconify/svelte';
+  import { createEventDispatcher } from 'svelte';
+  import { fade } from 'svelte/transition';
+  import { v4 as uuidv4 } from 'uuid';
 
   /** @type {import('$lib').Page | null} */
-  export let page = null
+  export let page = null;
 
-  const dispatch = createEventDispatcher()
+  const dispatch = createEventDispatcher();
 
-  let new_page_name = ''
-  let new_page_url = ''
-  let new_page_source = $active_page_id
-  $: page_creation_disabled = !new_page_name || !new_page_url
+  let new_page_name = '';
+  let new_page_url = '';
+  let new_page_source = $active_page_id;
+  $: page_creation_disabled = !new_page_name || !new_page_url;
 
-  let page_label_edited = false
+  let page_label_edited = false;
   $: new_page_url = page_label_edited
     ? validate_url(new_page_url)
-    : validate_url(new_page_name)
+    : validate_url(new_page_name);
 
   $: new_page_details = {
     id: uuidv4(),
     name: new_page_name,
     url: new_page_url,
     parent: page?.id || null,
-  }
+  };
 </script>
 
 <form

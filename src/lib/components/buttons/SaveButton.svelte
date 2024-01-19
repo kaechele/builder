@@ -1,13 +1,13 @@
 <script>
-  import { createEventDispatcher } from 'svelte'
-  const dispatch = createEventDispatcher()
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
 
-  import { Spinner } from '../misc'
+  import { Spinner } from '../misc';
 
-  export let variants = ''
-  export let type = 'button'
-  export let disabled = false
-  export let loading = false
+  export let variants = '';
+  export let type = 'button';
+  export let disabled = false;
+  export let loading = false;
 </script>
 
 <button
@@ -31,7 +31,9 @@
     padding: 0.5rem 1rem;
     border-radius: var(--primo-border-radius);
     font-weight: 600;
-    transition: background 0.1s, color 0.1s;
+    transition:
+      background 0.1s,
+      color 0.1s;
 
     &:hover {
       background: var(--primo-color-brand-dark);

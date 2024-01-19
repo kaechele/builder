@@ -1,14 +1,14 @@
 <script>
-  import Spinner from '$lib/ui/Spinner.svelte'
-  import Icon from '@iconify/svelte'
+  import Spinner from '$lib/ui/Spinner.svelte';
+  import Icon from '@iconify/svelte';
 
-  export let label = ''
-  export let icon = null
-  export let id = null
-  export let variants = ''
-  export let type = 'button'
-  export let disabled = false
-  export let loading = false
+  export let label = '';
+  export let icon = null;
+  export let id = null;
+  export let variants = '';
+  export let type = 'button';
+  export let disabled = false;
+  export let loading = false;
 </script>
 
 {#if type === 'input'}
@@ -69,7 +69,10 @@
     font-size: 14px;
     box-shadow: var(--primo-ring-brand);
     color: var(--primo-color-white);
-    transition: box-shadow 0.1s, background 0.1s, color 0.1s;
+    transition:
+      box-shadow 0.1s,
+      background 0.1s,
+      color 0.1s;
     margin: var(--space-y, 0) var(--space-x, 0);
 
     &:hover {

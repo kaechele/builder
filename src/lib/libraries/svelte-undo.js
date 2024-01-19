@@ -1,5 +1,5 @@
-import { writable } from 'svelte/store';
 import { cloneDeep } from 'lodash-es';
+import { writable } from 'svelte/store';
 
 export function createStack(current) {
 	/** @type {T[]} */

@@ -1,41 +1,41 @@
 <script>
-  import Icon from '@iconify/svelte'
-  import { createEventDispatcher } from 'svelte'
-  const dispatch = createEventDispatcher()
-  export let field
-  export let level
+  import Icon from '@iconify/svelte';
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+  export let field;
+  export let level;
 
-  $: options = field.options?.options
+  $: options = field.options?.options;
 
   function validateFieldKey(key) {
     // replace dash and space with underscore
-    return key.replace(/-/g, '_').replace(/ /g, '_').toLowerCase()
+    return key.replace(/-/g, '_').replace(/ /g, '_').toLowerCase();
   }
 
   function moveOption(indexOfItem, direction) {
-    const item = options[indexOfItem]
-    const withoutItem = options.filter((_, i) => i !== indexOfItem)
+    const item = options[indexOfItem];
+    const withoutItem = options.filter((_, i) => i !== indexOfItem);
     if (direction === 'up') {
       field.options.options = [
         ...withoutItem.slice(0, indexOfItem - 1),
         item,
         ...withoutItem.slice(indexOfItem - 1),
-      ]
+      ];
     } else if (direction === 'down') {
       field.options.options = [
         ...withoutItem.slice(0, indexOfItem + 1),
         item,
         ...withoutItem.slice(indexOfItem + 1),
-      ]
+      ];
     } else {
-      console.error('Direction must be up or down')
+      console.error('Direction must be up or down');
     }
   }
 
   function removeOption(itemIndex) {
     field.options.options = field.options.options.filter(
-      (_, i) => i !== itemIndex
-    )
+      (_, i) => i !== itemIndex,
+    );
   }
 </script>
 
@@ -59,8 +59,8 @@
             type="text"
             bind:value={option.value}
             on:input={() => {
-              option.value = validateFieldKey(option.value)
-              dispatch('input')
+              option.value = validateFieldKey(option.value);
+              dispatch('input');
             }}
           />
         </label>
@@ -104,7 +104,7 @@
               value: '',
             },
           ],
-        }
+        };
       } else {
         field.options.options = [
           ...field.options.options,
@@ -112,9 +112,9 @@
             label: '',
             value: '',
           },
-        ]
+        ];
       }
-      dispatch('input')
+      dispatch('input');
     }}><i class="fas fa-plus" />Add Option</button
   >
 </div>

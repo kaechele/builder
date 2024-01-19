@@ -1,27 +1,26 @@
 <script>
-  import { onDestroy } from 'svelte'
-  import { fade, slide } from 'svelte/transition'
-  import Icon from '@iconify/svelte'
-  import { get, set } from 'idb-keyval'
+  import Icon from '@iconify/svelte';
+  import { get, set } from 'idb-keyval';
+  import { onDestroy } from 'svelte';
 
-  export let id = null
-  export let title = null
-  export let pill = null
+  export let id = null;
+  export let title = null;
+  export let pill = null;
 
-  let hidden = false
+  let hidden = false;
 
   $: if (title)
     get(title).then((res) => {
       if (res !== undefined) {
-        hidden = res
+        hidden = res;
       }
-    })
+    });
 
   onDestroy(() => {
     if (title) {
-      set(title, hidden)
+      set(title, hidden);
     }
-  })
+  });
 </script>
 
 <div class="card" {id}>
@@ -29,7 +28,7 @@
     <button
       class="header-button"
       on:click={() => {
-        hidden = !hidden
+        hidden = !hidden;
       }}
     >
       <header>

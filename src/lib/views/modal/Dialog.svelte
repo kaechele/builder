@@ -1,15 +1,15 @@
 <script>
-  import modal from '../../stores/app/modal'
-  import Image from './Dialogs/Image.svelte'
-  import Feedback from './Dialogs/Feedback.svelte'
-  export let component
-  export let props = {}
+  import modal from '../../stores/app/modal';
+  import Feedback from './Dialogs/Feedback.svelte';
+  import Image from './Dialogs/Image.svelte';
+  export let component;
+  export let props = {};
   export let options = {
     disableClose: false,
-  }
-  export let onSubmit
+  };
+  export let onSubmit;
 
-  let value = ''
+  let value = '';
 </script>
 
 <main class="primo-reset">

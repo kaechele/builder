@@ -1,9 +1,9 @@
 <script>
-	import Primo from '$lib/Primo.svelte'
+  import Primo from '$lib/Primo.svelte';
 
-	export let data
+  export let data;
 </script>
 
 <Primo {data}>
-	<slot />
+  <slot />
 </Primo>

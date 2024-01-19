@@ -6,10 +6,9 @@
 
   if (!field?.options?.options) {
     field.options = {
-      options: []
-    }
+      options: [],
+    };
   }
-
 </script>
 
 <div class="label-container">
@@ -52,5 +51,4 @@
       }
     }
   }
-
 </style>

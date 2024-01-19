@@ -1,11 +1,11 @@
 <script>
-  import Spinner from '$lib/ui/Spinner.svelte'
+  import Spinner from '$lib/ui/Spinner.svelte';
 
-  export let label = ''
-  export let loading = false
-  export let variant = 'primary'
+  export let label = '';
+  export let loading = false;
+  export let variant = 'primary';
 
-  export let element = 'button'
+  export let element = 'button';
 </script>
 
 <svelte:element
@@ -36,7 +36,10 @@
     font-size: 0.875rem;
 
     color: var(--primo-color-white);
-    transition: background 0.1s, color 0.1s, box-shadow 0.1s;
+    transition:
+      background 0.1s,
+      color 0.1s,
+      box-shadow 0.1s;
     margin: var(--space-y, 0) var(--space-x, 0);
 
     &.primary {

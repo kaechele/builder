@@ -1,12 +1,10 @@
 <script>
-  import { fade } from 'svelte/transition';
   import { createEventDispatcher } from 'svelte';
   import { IconButton } from '../misc';
 
   export let disabled = false;
 
   const dispatch = createEventDispatcher();
-
 </script>
 
 <div class="subfield">
@@ -29,7 +27,8 @@
     icon="times"
     variants="is-danger is-outlined"
     on:click={() => dispatch('delete')}
-    {disabled} />
+    {disabled}
+  />
 </div>
 
 <style lang="postcss">
@@ -71,5 +70,4 @@
   :global(.input-group > div input:focus) {
     border-color: var(----primo-color-brand);
   }
-
 </style>

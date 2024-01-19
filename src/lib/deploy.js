@@ -19,7 +19,7 @@
  * @property {string} deploy_id - A unique identifier for the deployment.
  */
 
-let listener = () => {}
+let listener = () => {};
 
 /**
  * Used externally to listen for deployments & perform the deployment.
@@ -31,11 +31,11 @@ let listener = () => {}
  * @returns {Promise<{DeploymentResponse}>} - A Promise that resolves to an object containing details of the deployment.
  */
 export function deploy_subscribe(fn) {
-	listener = fn
+  listener = fn;
 }
 
 export function deploy_unsubscribe() {
-	listener = null
+  listener = null;
 }
 
 /**
@@ -45,6 +45,6 @@ export function deploy_unsubscribe() {
  * @returns {Promise<DeploymentResponse>}
  */
 export async function deploy(payload, create_new) {
-	// When data changes, notify the listener
-	return await listener(payload, create_new)
+  // When data changes, notify the listener
+  return await listener(payload, create_new);
 }

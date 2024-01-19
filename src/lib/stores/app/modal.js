@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-import {modalTypes as initialModalTypes} from './modalTypes'
-import {writable,get} from 'svelte/store'
-import Mousetrap from 'mousetrap'
+import Mousetrap from 'mousetrap';
+import { writable } from 'svelte/store';
+import { modalTypes as initialModalTypes } from './modalTypes';
 
 const initialState = {
   type: null,
@@ -10,7 +10,7 @@ const initialState = {
   componentProps: {},
   header: {
     title: '',
-    icon: null
+    icon: null,
   },
   footer: null,
   variants: '',
@@ -18,69 +18,71 @@ const initialState = {
   disabledBgClose: false,
   maxWidth: null,
   showSwitch: false,
-  noPadding: false
-}
+  noPadding: false,
+};
 
 const modalTypes = {
-  ...initialModalTypes
-}
+  ...initialModalTypes,
+};
 
-const store = writable(initialState)
+const store = writable(initialState);
 
 const modal_startup = () => {
   Mousetrap.bind('backspace', (e) => {
-    e.preventDefault()
-  })
-}
+    e.preventDefault();
+  });
+};
 const modal_cleanup = () => {
-  Mousetrap.unbind('backspace')
-}
+  Mousetrap.unbind('backspace');
+};
 
 export default {
   show: (type, componentProps = {}, modalOptions = {}) => {
-    const typeToShow = getModalType(type, componentProps, modalOptions)
-    modal_startup()
-    store.update(s => ({ 
-      ...initialState, 
+    const typeToShow = getModalType(type, componentProps, modalOptions);
+    modal_startup();
+    store.update((s) => ({
+      ...initialState,
       ...typeToShow,
       ...modalOptions,
       type,
-    }))
+    }));
   },
   hide: (nav = null) => {
-    modal_cleanup()
-    store.update(s => ({ 
+    modal_cleanup();
+    store.update((s) => ({
       ...s,
       type: null,
-    }))
+    }));
   },
   register: (modal) => {
     if (Array.isArray(modal)) {
-      modal.forEach(createModal)
+      modal.forEach(createModal);
     } else if (typeof modal === 'object') {
-      createModal(modal)
+      createModal(modal);
     } else {
-      console.error('Could not register modal an array or object')
+      console.error('Could not register modal an array or object');
     }
 
     function createModal(modal) {
-      const { id, component, componentProps={}, options={} } = modal
+      const { id, component, componentProps = {}, options = {} } = modal;
       modalTypes[id] = {
         ...options,
         component,
         header: options.header,
         variants: options.width ? `${options.width}` : '',
-        componentProps
-      }
+        componentProps,
+      };
     }
   },
-  subscribe: store.subscribe
-}
+  subscribe: store.subscribe,
+};
 
 function getModalType(type, componentProps = {}, modalOptions = {}) {
-  return {
-    componentProps,
-    ...modalTypes[type],
-    ...modalOptions
-  } || console.error('Invalid modal type:', type)
+  return (
+    {
+      componentProps,
+      ...modalTypes[type],
+      ...modalOptions,
+    } || console.error('Invalid modal type:', type)
+  );
 }

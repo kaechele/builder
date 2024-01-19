@@ -1,11 +1,6 @@
-import EditField from './EditField.svelte'
-import SelectOne from './SelectOne.svelte'
-import TextInput from './TextInput.svelte'
-import SubField from './SubField.svelte'
+import EditField from './EditField.svelte';
+import SelectOne from './SelectOne.svelte';
+import SubField from './SubField.svelte';
+import TextInput from './TextInput.svelte';
 
-export {
-  EditField,
-  SelectOne,
-  TextInput,
-  SubField
-}
+export { EditField, SelectOne, SubField, TextInput };

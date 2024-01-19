@@ -79,10 +79,9 @@ export const iframePreview = (locale = 'en') => `
         </div>
     </body>
   </html>
-`
+`;
 
 export const componentPreview = (code) => {
-
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -92,8 +91,8 @@ export const componentPreview = (code) => {
         <style>${code.css}</style>
       </body>
     </html>
-  `
-}
+  `;
+};
 
 export const pagePreview = `
   <!DOCTYPE html>
@@ -130,8 +129,7 @@ export const pagePreview = `
         }
     </style>
   </html>
-`
-
+`;
 
 export const currentPagePreview = `
   <!DOCTYPE html>
@@ -154,4 +152,4 @@ export const currentPagePreview = `
         }
     </style>
   </html>
-`
+`;

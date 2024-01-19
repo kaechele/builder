@@ -1,15 +1,15 @@
 <script>
-  import { createEventDispatcher } from 'svelte'
-  import Icon from '@iconify/svelte'
-  const dispatch = createEventDispatcher()
+  import Icon from '@iconify/svelte';
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
 
   /** @type {string | null} */
-  export let id = null
-  export let variants = ''
-  export let type = 'button'
-  export let disabled = false
-  export let icon = null
-  export let label = ''
+  export let id = null;
+  export let variants = '';
+  export let type = 'button';
+  export let disabled = false;
+  export let icon = null;
+  export let label = '';
 </script>
 
 <button
@@ -43,7 +43,9 @@
     border-top-left-radius: var(--PrimaryButton-round-tl, 0.25rem);
     border-bottom-right-radius: var(--PrimaryButton-round-br, 0.25rem);
     border-bottom-left-radius: var(--PrimaryButton-round-bl, 0.25rem);
-    transition: color 0.1s, background-color 0.1s;
+    transition:
+      color 0.1s,
+      background-color 0.1s;
 
     display: flex;
     justify-content: center;

@@ -13,7 +13,6 @@
   export let disabled = null;
   export let style = '';
   export let position = 'left';
-
 </script>
 
 {#if link}
@@ -23,7 +22,8 @@
     href={link.href}
     {style}
     rel={link.rel}
-    target={link.target}>
+    target={link.target}
+  >
     {#if position === 'left'}
       <span class="icon is-{size}">
         {#if iconClasses}
@@ -46,7 +46,8 @@
     {title}
     on:click={(e) => dispatch('click', e)}
     {disabled}
-    {style}>
+    {style}
+  >
     {#if position === 'left'}
       <span class="icon is-{size}">
         {#if iconClasses}
@@ -74,7 +75,9 @@
     background: var(--color-gray-1);
     padding: 0.25rem 0.5rem;
     margin-right: 0.25rem;
-    transition: background-color 0.1s, color 0.1s;
+    transition:
+      background-color 0.1s,
+      color 0.1s;
 
     .icon + span {
       margin-left: 0.25rem;
@@ -89,5 +92,4 @@
       transform: rotate(360deg);
     }
   }
-
 </style>

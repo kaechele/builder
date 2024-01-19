@@ -1,5 +1,5 @@
 <script>
-  import { fade } from 'svelte/transition'
+  import { fade } from 'svelte/transition';
 </script>
 
 <svg in:fade xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

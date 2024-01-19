@@ -1,16 +1,16 @@
-import { writable, get } from 'svelte/store';
+import { browser } from '$app/environment';
 import { page } from '$app/stores';
-import {browser} from '$app/environment';
+import { writable } from 'svelte/store';
 
 /** @type {import('svelte/store').Writable<import('$lib').Page[]>} */
-const pages = writable([])
+const pages = writable([]);
 
 if (browser) {
-  page.subscribe(({data}) => {
+  page.subscribe(({ data }) => {
     if (data?.pages) {
-      pages.set(data.pages)
+      pages.set(data.pages);
     }
-  })
+  });
 }
 
-export default pages
+export default pages;

@@ -18,7 +18,6 @@
     }
     dispatch('input');
   }
-
 </script>
 
 <!-- svelte-ignore a11y-label-has-associated-control -->
@@ -30,7 +29,8 @@
     {type}
     {disabled}
     {...$$restProps}
-    on:input={onInput} />
+    on:input={onInput}
+  />
   <slot />
 </label>
 
@@ -73,5 +73,4 @@
     border-bottom: 2px solid rgb(23, 23, 23);
     padding: 0.25rem 0.5rem;
   }
-
 </style>

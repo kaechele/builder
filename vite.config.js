@@ -3,8 +3,8 @@ import { defineConfig } from 'vitest/config';
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
-	plugins: [sveltekit()],
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
-	}
+  plugins: [sveltekit()],
+  test: {
+    include: ['src/**/*.{test,spec}.{js,ts}'],
+  },
 });

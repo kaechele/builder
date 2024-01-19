@@ -1,15 +1,12 @@
-import {writable} from 'svelte/store'
-import buildInFieldTypes from '../../field-types'
+import { writable } from 'svelte/store';
+import buildInFieldTypes from '../../field-types';
 
-const fieldTypes = writable(buildInFieldTypes)
+const fieldTypes = writable(buildInFieldTypes);
 
 export default {
   register: (userTypes) => {
-    fieldTypes.update(types => [
-      ...types,
-      ...userTypes
-    ])
+    fieldTypes.update((types) => [...types, ...userTypes]);
   },
   set: fieldTypes.set,
-  subscribe: fieldTypes.subscribe
-}
+  subscribe: fieldTypes.subscribe,
+};

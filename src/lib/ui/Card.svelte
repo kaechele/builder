@@ -3,7 +3,6 @@
 
   export let id = null;
   export let title = null;
-
 </script>
 
 <div class="card" {id} in:fade={{ duration: 100 }}>
@@ -42,5 +41,4 @@
       justify-content: flex-end;
     }
   }
-
 </style>

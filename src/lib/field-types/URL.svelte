@@ -2,7 +2,6 @@
   import { TextField } from '../ui';
 
   export let field;
-
 </script>
 
 <div>
@@ -13,5 +12,4 @@
   div {
     width: 100%;
   }
-
 </style>

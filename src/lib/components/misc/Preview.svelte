@@ -4,7 +4,7 @@
 
   export let preview;
   export let preventClicks = false;
-  export let ratio = null
+  export let ratio = null;
 
   let height;
 
@@ -15,8 +15,8 @@
     iframe.contentWindow.postMessage({ preview });
 
     setTimeout(() => {
-      const scrollHeight = iframe?.contentWindow?.document?.body?.scrollHeight // prevent weird error
-      if (!scrollHeight) return
+      const scrollHeight = iframe?.contentWindow?.document?.body?.scrollHeight; // prevent weird error
+      if (!scrollHeight) return;
       height = iframe.contentWindow?.document?.body?.scrollHeight * scaleRatio;
       iframe.height = height;
     }, 100);
@@ -26,13 +26,12 @@
   function resizePreview() {
     const { clientWidth: parentWidth } = container;
     const { clientWidth: childWidth } = iframe;
-    scaleRatio = ratio || (parentWidth / childWidth);
+    scaleRatio = ratio || parentWidth / childWidth;
     iframe.style.transform = `scale(${scaleRatio})`;
     iframe.style.height = 100 / scaleRatio + '%';
   }
 
   onMount(resizePreview);
-
 </script>
 
 <div class="preview" style="height:{ratio === 1 ? '100%' : `${height}px`}">
@@ -42,7 +41,8 @@
       in:fade={{ duration: 100 }}
       title="Preview HTML"
       srcdoc={preview}
-      bind:this={iframe} />
+      bind:this={iframe}
+    />
   </div>
 </div>
 
@@ -77,5 +77,4 @@
       }
     }
   }
-
 </style>

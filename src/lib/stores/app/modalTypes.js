@@ -1,49 +1,57 @@
-import {Deploy,ComponentEditor,SymbolEditor,PageEditor,SiteEditor,SitePages,Dialog} from '../../views/modal'
+import {
+  ComponentEditor,
+  Deploy,
+  Dialog,
+  PageEditor,
+  SiteEditor,
+  SitePages,
+  SymbolEditor,
+} from '../../views/modal';
 
 export const modalTypes = {
-  'DEPLOY' : {
+  DEPLOY: {
     component: Deploy,
     header: {
       title: 'Deploy',
-      icon: 'fas fa-cloud-upload-alt'
-    }
+      icon: 'fas fa-cloud-upload-alt',
+    },
   },
-  'COMPONENT_EDITOR' : {
+  COMPONENT_EDITOR: {
     component: ComponentEditor,
     header: {
       title: 'Create Component',
-      icon: 'fas fa-code'
+      icon: 'fas fa-code',
     },
   },
-  'SYMBOL_EDITOR' : {
+  SYMBOL_EDITOR: {
     component: SymbolEditor,
     header: {
       title: 'Create Symbol',
-      icon: 'fas fa-code'
+      icon: 'fas fa-code',
     },
   },
-  'PAGE_EDITOR' : {
+  PAGE_EDITOR: {
     component: PageEditor,
     header: {
       title: 'Edit Page',
-      icon: 'fas fa-code'
+      icon: 'fas fa-code',
     },
   },
-  'SITE_EDITOR' : {
+  SITE_EDITOR: {
     component: SiteEditor,
     header: {
       title: 'Edit Page',
-      icon: 'fas fa-code'
+      icon: 'fas fa-code',
     },
   },
-  'SITE_PAGES' : {
+  SITE_PAGES: {
     component: SitePages,
     header: {
       title: 'Pages',
-      icon: 'fas fa-th-large'
+      icon: 'fas fa-th-large',
     },
   },
-  'DIALOG' : {
-    component: Dialog
+  DIALOG: {
+    component: Dialog,
   },
-}
+};

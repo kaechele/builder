@@ -1,31 +1,51 @@
 <script>
-  import {fly} from 'svelte/transition'
-  import {find as _find} from 'lodash-es'
   import Icon from '@iconify/svelte';
+  import { fly } from 'svelte/transition';
 
-  export let align = 'right'
-  export let icon = null
-  export let options = []
+  export let align = 'right';
+  export let icon = null;
+  export let options = [];
 
-  let showingSelector = false
-
+  let showingSelector = false;
 </script>
 
-<div id="dropdown" class:left={align === 'left'} in:fly={{duration: 200, x: 50, opacity: 0}}>
-  <button class="label" class:active={showingSelector} id="jobLabel" on:click={() => showingSelector = !showingSelector}>
-    <Icon {icon} height="10" width="10" />   
-    <span>Controls</span>   
-    <svg id="chevron" width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0.163372 4.73321L0.693703 4.20288C0.81922 4.07737 1.02274 4.07737 1.14828 4.20288L5.99995 9.04303L10.8516 4.20291C10.9772 4.07739 11.1807 4.07739 11.3062 4.20291L11.8366 4.73324C11.9621 4.85876 11.9621 5.06228 11.8366 5.18782L6.22723 10.7971C6.10171 10.9226 5.89819 10.9226 5.77265 10.7971L0.163372 5.1878C0.0378277 5.06225 0.0378277 4.85873 0.163372 4.73321Z" fill="white"/>
-    </svg>      
+<div
+  id="dropdown"
+  class:left={align === 'left'}
+  in:fly={{ duration: 200, x: 50, opacity: 0 }}
+>
+  <button
+    class="label"
+    class:active={showingSelector}
+    id="jobLabel"
+    on:click={() => (showingSelector = !showingSelector)}
+  >
+    <Icon {icon} height="10" width="10" />
+    <span>Controls</span>
+    <svg
+      id="chevron"
+      width="12"
+      height="15"
+      viewBox="0 0 12 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.163372 4.73321L0.693703 4.20288C0.81922 4.07737 1.02274 4.07737 1.14828 4.20288L5.99995 9.04303L10.8516 4.20291C10.9772 4.07739 11.1807 4.07739 11.3062 4.20291L11.8366 4.73324C11.9621 4.85876 11.9621 5.06228 11.8366 5.18782L6.22723 10.7971C6.10171 10.9226 5.89819 10.9226 5.77265 10.7971L0.163372 5.1878C0.0378277 5.06225 0.0378277 4.85873 0.163372 4.73321Z"
+        fill="white"
+      />
+    </svg>
   </button>
   {#if showingSelector}
-    <div class="select-container" in:fly={{duration:100, y: -20, opacity: 0}}>
+    <div
+      class="select-container"
+      in:fly={{ duration: 100, y: -20, opacity: 0 }}
+    >
       <div class="search-container">
         <div class="locale-list">
           {#each options as item}
             <button on:click={item.onclick}>
-              <Icon icon={item.icon} />  
+              <Icon icon={item.icon} />
               <span>{item.label}</span>
             </button>
           {/each}
@@ -59,7 +79,7 @@
     }
 
     &:hover:not(.active) svg#chevron {
-        transform: translateY(2px);
+      transform: translateY(2px);
     }
 
     &.active svg#chevron {

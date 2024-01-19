@@ -1,1 +1,1 @@
-declare module '$lib'
+declare module '$lib';

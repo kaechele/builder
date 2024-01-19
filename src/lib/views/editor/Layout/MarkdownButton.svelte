@@ -1,7 +1,6 @@
 <script>
   export let icon;
   export let active = false;
-
 </script>
 
 <button on:click class:active>
@@ -32,5 +31,4 @@
       color: var(--primo-color-white);
     }
   }
-
 </style>

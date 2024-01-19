@@ -9,7 +9,6 @@
   export let variants = '';
 
   $: dispatch('select', selection);
-
 </script>
 
 <div class={variants} {id}>
@@ -19,7 +18,8 @@
       <button
         class:selected={selection === option}
         type="button"
-        on:click={() => (selection = option)}>{option}</button>
+        on:click={() => (selection = option)}>{option}</button
+      >
     {/each}
   </div>
 </div>
@@ -41,7 +41,9 @@
       background: var(--color-gray-1);
       color: var(--color-gray-7);
       padding: 0.5rem 0;
-      transition: background 0.1s, color 0.1s;
+      transition:
+        background 0.1s,
+        color 0.1s;
 
       &.selected {
         background: var(--primo-color-brand);
@@ -50,5 +52,4 @@
       }
     }
   }
-
 </style>
