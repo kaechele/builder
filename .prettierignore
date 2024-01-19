@@ -7,6 +7,11 @@ node_modules
 .env.*
 !.env.example
 
+# vendored libraries
+src/lib/libraries
+src/lib/compiler/lib
+src/lib/compiler/workers/postcss.worker.js
+
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
 package-lock.json
