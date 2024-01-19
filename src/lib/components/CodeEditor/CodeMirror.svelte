@@ -10,7 +10,7 @@
       prettier_css: (await import('prettier/plugins/postcss')).default,
       prettier_babel: (await import('prettier/plugins/babel')).default,
       prettier_svelte: (
-        await import('../../libraries/prettier/prettier-svelte')
+        await import('prettier-plugin-svelte')
       ).default,
     };
   }
