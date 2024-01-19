@@ -7,8 +7,8 @@
   async function fetch_dev_libraries() {
     libraries = {
       prettier: await import('prettier'),
-      prettier_css: (await import('prettier/esm/parser-postcss')).default,
-      prettier_babel: (await import('prettier/esm/parser-babel')).default,
+      prettier_css: (await import('prettier/plugins/postcss')).default,
+      prettier_babel: (await import('prettier/plugins/babel')).default,
       prettier_svelte: (
         await import('../../libraries/prettier/prettier-svelte')
       ).default,
